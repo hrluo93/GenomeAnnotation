@@ -19,3 +19,9 @@ gawn/01_scripts/TransDecoder/util/cufflinks_gtf_to_alignment_gff3.pl merged.gtf 
 TransDecoder.LongOrfs -t sptranscripts.fasta
 TransDecoder.Predict -t sptranscripts.fasta
 gawn/01_scripts/TransDecoder/util/cdna_alignment_orf_to_genome_orf.pl sptranscripts.fasta.transdecoder.gff3 sptranscripts.gff3 sptranscripts.fasta > sptranscripts.fasta.transdecoder.genome.gff3
+
+#ab-initio
+#AUGUSTUS can directly trained in BuscoV5
+busco -i sp.fasta.masked -o sp -l aves_odb10 -m genome -c 12 -f --long --augustus --augustus_parameters='--progress=true'
+# The training result can be found in run_aves_odb10/augustus_output/retraining_parameters/BUSCO_sp
+# CP BUSCO_sp to AUGUSTUS speciesdir
