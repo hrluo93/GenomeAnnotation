@@ -9,7 +9,8 @@ We provide two pipelines for avians genome annotation, one for with RNA-seq and 
 
 
 1.RNA-seq+homology+ab-initio based annotation.sh
-![annotation1](https://user-images.githubusercontent.com/57522086/176405489-65efa6b7-cff7-481d-a9a9-4bd7b12b2a8d.png)
+![annotation1](https://user-images.githubusercontent.com/57522086/180604868-19489cc6-d8c4-4b64-a885-8e0fca3e33b9.png)
+
 
 2.Homology+ab-initio.sh based annotation.sh
 
