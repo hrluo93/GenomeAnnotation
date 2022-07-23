@@ -13,7 +13,7 @@ We provide two pipelines for avians genome annotation, one for with RNA-seq and 
 
 
 2.Homology+ab-initio.sh based annotation.sh
-
+Coming Sooooooooooon...... 0%
 
 RNA-seq+homology+ab-initio based annotation.sh have been used in 
 
