@@ -4,7 +4,7 @@
 gt seqtransform -addstopaminos yes homoraw.faa > homo.faa
 /gth-1.7.1/bin/gth -genomic sp.fasta.masked -intermediate -protein homo.faa -gff3out -species chicken -o sp_gth.gff3
 EVidenceModeler-1.1.1/EvmUtils/misc/genomeThreader_to_evm_gff3.pl sp_gth.gff3 > sp_gth.prot.gff3
-#2 Exonerate 2.2.0 (We found some memery use bugs in 2.4.0)
+#2 Exonerate 2.2.0 (We found some memery usage bugs in 2.4.0)
 exonerate -t sp.fasta.masked -q homo.faa --querytype protein --targettype dna --model protein2genome --bestn 1 --showtargetgff yes --showalignment no -M 256000 -o sp_exonerate.gff
 EVidenceModeler-1.1.1/EvmUtils/misc/exonerate_gff_to_alignment_gff3.pl sp_exonerate.gff > sp_exonerate.prot.gff
 #Or you can use maker output 
