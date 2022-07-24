@@ -8,9 +8,9 @@ EVidenceModeler-1.1.1/EvmUtils/misc/genomeThreader_to_evm_gff3.pl sp_gth.gff3 > 
 exonerate -t sp.fasta.masked -q homo.faa --querytype protein --targettype dna --model protein2genome --bestn 1 --showtargetgff yes --showalignment no -M 256000 -o sp_exonerate.gff
 EVidenceModeler-1.1.1/EvmUtils/misc/exonerate_gff_to_alignment_gff3.pl sp_exonerate.gff > sp_exonerate.prot.gff
 #Or you can use maker output 
-cat sp.FINAL.fasta.maker.output/sp.FINAL.fasta_datastore/your/path/scaffold_2/theVoid.scaffold_2/evidence_*.gff > evi-sca2.gff
-cat sp.FINAL.fasta.maker.output/sp.FINAL.fasta_datastore/your/path/scaffold_3/theVoid.scaffold_3/evidence_*.gff > evi-sca3.gff
-cat sp.FINAL.fasta.maker.output/sp.FINAL.fasta_datastore/your/path/scaffold_4/theVoid.scaffold_4/evidence_*.gff > evi-sca4.gff
+cat sp.masked.fasta.maker.output/sp.masked.fasta_datastore/your/path/scaffold_2/theVoid.scaffold_2/evidence_*.gff > evi-sca2.gff
+cat sp.masked.fasta.maker.output/sp.masked.fasta_datastore/your/path/scaffold_3/theVoid.scaffold_3/evidence_*.gff > evi-sca3.gff
+cat sp.masked.fasta.maker.output/sp.masked.fasta_datastore/your/path/scaffold_4/theVoid.scaffold_4/evidence_*.gff > evi-sca4.gff
 # run all scaffold
 cat evi-sca*.gff > allevi.gff
 EVidenceModeler-1.1.1/EvmUtils/misc/maker_match_gff_to_gene_gff3.pl allevi.gff > allmakergene.gff
