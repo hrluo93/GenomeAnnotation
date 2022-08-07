@@ -14,7 +14,7 @@ We provide two pipelines for avians genome annotation, one for with RNA-seq and 
 
 2.Homology+ab-initio.sh based annotation.sh
 
-While Busco V5.4 output files contain gff3, we can construct ab initio gene prediction using BUSCO single-copy genes as training sets. 
+Ab initio gene prediction using BUSCO single-copy genes as training sets. 
 
 RNA-seq+homology+ab-initio based annotation.sh have been used in 
 
