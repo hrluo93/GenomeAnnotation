@@ -16,6 +16,11 @@ We provide two pipelines for avians genome annotation, one for with RNA-seq and 
 
 Ab initio gene prediction using BUSCO single-copy genes as training sets. 
 
+GMAP, Exonerate and GTH were used in homology-based annotation
+
+AUGSUTUS, SNAP(MAKER3), GeneID were used in ab initio annotation
+
+
 RNA-seq+homology+ab-initio based annotation.sh have been used in 
 
 
