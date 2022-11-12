@@ -146,14 +146,14 @@ EVidenceModeler-1.1.1/EvmUtils/partition_EVM_inputs.pl --genome sp.masked.fasta 
 EVidenceModeler-1.1.1/EvmUtils/write_EVM_commands.pl --genome sp.masked.fasta --protein_alignments prot.evm.gff --gene_predictions prot.evm.gff --transcript_alignments sptranscripts.fasta.transdecoder.genome.gff3 --weights weights.txt --output_file_name evm.out  --partitions partitions_list.out >  commands.list
 EVidenceModeler-1.1.1/EvmUtils/execute_EVM_commands.pl commands.list
 EVidenceModeler-1.1.1/EvmUtils/recombine_EVM_partial_outputs.pl --partitions partitions_list.out --output_file_name evm.out
-EVidenceModeler-1.1.1/EvmUtils/convert_EVM_outputs_to_GFF3.pl  --partitions partitions_list.out --output_file_name evm.out --genome /home/tilapia/xuluohao/dabao/asm/anno/dbp2.FINAL.fasta.masked
+EVidenceModeler-1.1.1/EvmUtils/convert_EVM_outputs_to_GFF3.pl  --partitions partitions_list.out --output_file_name evm.out --genome sp.fasta.masked
 find . -regex ".*evm.out.gff3" -exec cat {} \; > EVM.all.gff3
 
 #PASA update annotation and add UTR
 cp Trinity-GG.fasta all_transcripts.fasta
 makeblastdb -in UniVec -dbtype nucl -parse_seqids -title UniVec -out UniVec
 pasa-2.5.2/bin/tools/seqclean all_transcripts.fasta -v /home/PASA/UniVec
-Launch_PASA_pipeline.pl -c alignAssembly.config -C -R -g sp.masked.fasta -t all_transcripts.fasta.clean -T -u all_transcripts.fasta --ALIGNERS blat,gmap --CPU 20
+Launch_PASA_pipeline.pl -c alignAssembly.config -C -R -g sp.masked.fasta -t all_transcripts.fasta.clean -T -u all_transcripts.fasta --ALIGNERS blat,gmap --CPU 20 --TRANSDECODER
 Load_Current_Gene_Annotations.dbi -c alignAssembly.config -g genome_sample.fasta -P EVM.all.gff3
 #SQLite path in alignAssembly.config and annotCompare.config
 Launch_PASA_pipeline.pl -c annotCompare.config -A -g sp.masked.fasta -t all_transcripts.fasta.clean --CPU 20
