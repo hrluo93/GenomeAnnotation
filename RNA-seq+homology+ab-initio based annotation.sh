@@ -143,7 +143,7 @@ ABINITIO_PREDICTION	geneid_v1.4	1
 
 
 EVidenceModeler-1.1.1/EvmUtils/partition_EVM_inputs.pl --genome sp.masked.fasta --protein_alignments prot.evm.gff --gene_predictions prot.evm.gff --transcript_alignments sptranscripts.fasta.transdecoder.genome.gff3 --segmentSize 100000 --overlapSize 10000 --partition_listing partitions_list.out
-EVidenceModeler-1.1.1/EvmUtils/write_EVM_commands.pl --genome sp.masked.fasta --protein_alignments prot.evm.gff --gene_predictions prot.evm.gff --transcript_alignments sptranscripts.fasta.transdecoder.genome.gff3 --weights weights.txt --output_file_name evm.out  --partitions partitions_list.out >  commands.list
+EVidenceModeler-1.1.1/EvmUtils/write_EVM_commands.pl --genome sp.masked.fasta --protein_alignments prot.evm.gff --gene_predictions prot.evm.gff --transcript_alignments sptranscripts.fasta.transdecoder.genome.gff3 --weights full/path/weights.txt --output_file_name evm.out  --partitions partitions_list.out >  commands.list
 EVidenceModeler-1.1.1/EvmUtils/execute_EVM_commands.pl commands.list
 EVidenceModeler-1.1.1/EvmUtils/recombine_EVM_partial_outputs.pl --partitions partitions_list.out --output_file_name evm.out
 EVidenceModeler-1.1.1/EvmUtils/convert_EVM_outputs_to_GFF3.pl  --partitions partitions_list.out --output_file_name evm.out --genome sp.fasta.masked
