@@ -8,7 +8,7 @@ EVidenceModeler-1.1.1/EvmUtils/misc/genomeThreader_to_evm_gff3.pl sp_gth.gff3 > 
 exonerate -t sp.fasta.masked -q homo.faa --querytype protein --targettype dna --model protein2genome --bestn 1 --showtargetgff yes --showalignment no -M 256000 -o sp_exonerate.gff
 EVidenceModeler-1.1.1/EvmUtils/misc/exonerate_gff_to_alignment_gff3.pl sp_exonerate.gff > sp_exonerate.prot.gff
 #Or you can use maker output 
-cat sp.masked.fasta.maker.output/sp.masked.fasta_datastore/*/*/scaffold_*/theVoid.scaffold_*/evidence_*.gff > evi-sca-all.gff
+cat sp.masked.fasta.maker.output/sp.masked.fasta_datastore/*/*/*_scaffold_*/theVoid.*_scaffold_*/evidence_*.gff > evi-sca-all.gff
 #maker match to evm input gff 
 EVidenceModeler-1.1.1/EvmUtils/misc/maker_match_gff_to_gene_gff3.pl allevi.gff > allmakergene.gff
 awk '{if ($2=="est2genome") print }' allmakergene.gff > sp.est2genome.est.gff
