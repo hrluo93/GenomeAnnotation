@@ -6,6 +6,10 @@ For avians, RNA samples are usually not easy to acquire.
 This project aims to create an easy way to annotate genomes.
 
 We provide two pipelines for avian genome annotation, one for with RNA-seq and one for without RNA-seq.
+
+
+Personally suggested that input transcripts from Hiast2+TransDecoder(cufflinks_gtf_to_alignment_gff3.pl) to PASA
+
 ###########update#################
 
 V2.sh: More simplicity, faster, and no frameshift 
