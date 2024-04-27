@@ -15,8 +15,10 @@ Personally suggested that input transcripts from Hiast2+TransDecoder(cufflinks_g
 V2.sh: More simplicity, faster, and no frameshift 
 
 RNA-based: Hisat2+TransDdecoder
+
 Ab-initio: braker3
-homology: Complete structure from Miniprot 
+
+Homology: Complete structure from Miniprot 
 
 #################################################
 
