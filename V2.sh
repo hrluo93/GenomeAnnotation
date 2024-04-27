@@ -1,5 +1,5 @@
 1###RNA-based
-#Hisat2.sh batch maaping
+#Hisat2.sh batch mapping
 
 ls /media/perimeter/data/WHXWZB-2023080075A/raw_data/illumina/RNA/*/*/*.R1.fastq.gz | cut -f 1-2 -d '.'| while read loc;do
 spname=`ls ${loc}.R1.fastq.gz | cut -f 9 -d '/'`
@@ -18,7 +18,7 @@ TransDecoder.LongOrfs -t sptranscripts.fasta
 TransDecoder.Predict -t sptranscripts.fasta
 gawn/01_scripts/TransDecoder/util/cdna_alignment_orf_to_genome_orf.pl sptranscripts.fasta.transdecoder.gff3 sptranscripts.gff3 sptranscripts.fasta > sptranscripts.fasta.transdecoder.genome.gff3
 
-2####Ab-initio
+2###Ab-initio
 ##Running braker3 singularity, soft-masked assembly required
 cp -r /home/perimeter/miniconda3/envs/braker/config/ /media/perimeter/r2/eeu/
 export AUGUSTUS_CONFIG_PATH=/media/perimeter/r2/eeu/config/
