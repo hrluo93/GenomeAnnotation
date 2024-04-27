@@ -26,7 +26,7 @@ singularity exec -B $PWD:$PWD /media/perimeter/r2/srcs/braker3.sif braker.pl --g
 
 3###homology
 ##Running in Miniprot, try to use as closest relative species homology proteins as you can 
-miniprot -t8 --gff homofaa2-adcy.fasta eeu.final2.fasta > eeu.mini.gff
+miniprot -t8 --gff eeu.final2.fasta homofaa2-adcy.fasta > eeu.mini.gff
 grep -e "stop_codon" /media/perimeter/r2/eeu/trans/eeu.mini.gff > miniprot.compelte.list
 grep -o "MP[0-9]*" miniprot.compelte.list > miniprot.compelte.id
 #https://github.com/jorvis/biocode/blob/9f043705e436db4a17dace4a2f70be0da5dfc3b5/gff/filter_gff3_by_id_list.py
