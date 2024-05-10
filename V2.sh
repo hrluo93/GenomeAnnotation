@@ -41,6 +41,6 @@ ABINITIO_PREDICTION	AUGUSTUS	2
 ABINITIO_PREDICTION	gmst	1
 ABINITIO_PREDICTION	GeneMark.hmm3	1
 
-#####PASA pipeline as described in RNA-seq+homology+ab-initio based annotation.sh. Personally suggested that input transcripts from Hiast2+TransDecoder(cufflinks_gtf_to_alignment_gff3.pl) to PASA would be better than trinity assembled (less TE)
+#####PASA pipeline as described in RNA-seq+homology+ab-initio based annotation.sh. Personally suggested that input transcripts from Hiast2+TransDecoder(cufflinks_gtf_genome_to_cdna_fasta.pl merged.gtf sp.fasta.masked > sptranscripts.fasta) to PASA would be better than trinity assembled (less TE)
 
 
