@@ -1,7 +1,6 @@
 # GenomeAnnotation
 Genome annotation in an easy way
 
-For avians, RNA samples are usually not easy to acquire. 
 
 This project aims to create an easy way to annotate genomes.
 
@@ -20,6 +19,24 @@ Ab-initio: braker3
 
 Homology: Complete structure from Miniprot 
 
+########### Post PASA ############
+###Soft-masked genome would result in TE contained in annotation. We used OrthoFinder to filter annotation results to the retention of orthologous genes and remove non-orthologous with 1 or 2 exons.
+##Target species (Gene ID ) in Orthogroups.GeneCount.tsv $3 with reference species in $2 and $4
+
+orthofinder -f orthof -og -M msa -t 12 -S blast_gz
+
+cd orthof/*/Orthogroups/
+
+cat Orthogroups.GeneCount.tsv | awk '{if ($2 > 0 || $4 >0) print}' | awk '{if ($3 > 0) print}' > nny.allortho.count.tsv
+
+awk 'FNR==NR {a[$1]=$0;next} $1 in a {print a[$1],$0}'  nny.allortho.count.tsv Orthogroups.tsv > nny.merge.tsv
+
+grep -o "NNYC[0-9]*\.[0-9]*" nny.merge.tsv | cut -f1 -d "." > nny.orthogene.list
+
+#nny.orthogene.list contained all orthologous genes that should kept. Non-orthologous with 1 or 2 exons can be found via TBTools GXF STAT or any other method you prefer.
+
+
+
 #################################################
 
 1.RNA-seq+homology+ab-initio based annotation.sh
@@ -36,7 +53,6 @@ AUGSUTUS, SNAP(MAKER3), GeneID were used in ab initio annotation
 
 
 RNA-seq+homology+ab-initio based annotation.sh have been used in the great bustard genome
-
 
 
 
