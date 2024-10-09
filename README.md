@@ -23,7 +23,7 @@ Homology: Complete structure from Miniprot
 ###Soft-masked genome would result in TE contained in annotation. We used OrthoFinder to filter annotation results to retain orthologous genes and remove non-orthologous with 1 or 2 exons.
 
 
-##Target species (Gene ID like NNYC[0-9]*\.[0-9]*)in Orthogroups.GeneCount.tsv $3 with reference species in $2 and $4
+##Target species (Gene ID like NNYC0000010.1 )in Orthogroups.GeneCount.tsv $3 with reference species in $2 and $4
 
 orthofinder -f orthof -og -M msa -t 12 -S blast_gz
 
@@ -33,7 +33,7 @@ cat Orthogroups.GeneCount.tsv | awk '{if ($2 > 0 || $4 >0) print}' | awk '{if ($
 
 awk 'FNR==NR {a[$1]=$0;next} $1 in a {print a[$1],$0}'  nny.allortho.count.tsv Orthogroups.tsv > nny.merge.tsv
 
-grep -o "NNYC[0-9]*\.[0-9]*" nny.merge.tsv | cut -f1 -d "." > nny.orthogene.list
+grep -o ![image](https://github.com/user-attachments/assets/2c3c5925-c08a-4e5f-ad6a-85f51b9cc063) nny.merge.tsv | cut -f1 -d "." > nny.orthogene.list
 
 #nny.orthogene.list contained all orthologous genes that should kept. Non-orthologous with 1 or 2 exons can be found via TBTools GXF STAT or any other method you prefer.
 
