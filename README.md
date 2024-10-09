@@ -20,7 +20,9 @@ Ab-initio: braker3
 Homology: Complete structure from Miniprot 
 
 ########### Post PASA ############
+
 ###Soft-masked genome would result in TE contained in annotation. We used OrthoFinder to filter annotation results to the retention of orthologous genes and remove non-orthologous with 1 or 2 exons.
+
 ##Target species (Gene ID ) in Orthogroups.GeneCount.tsv $3 with reference species in $2 and $4
 
 orthofinder -f orthof -og -M msa -t 12 -S blast_gz
