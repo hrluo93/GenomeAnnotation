@@ -27,8 +27,8 @@ singularity exec -B $PWD:$PWD /media/perimeter/r2/srcs/braker3.sif braker.pl --g
 3###homology
 ##Running in Miniprot, try to use as closest relative species homology proteins as you can 
 miniprot -t8 --gff eeu.final2.fasta homofaa2-adcy.fasta > eeu.mini.gff
-#The recent version used StopCodon=X to represent how many stopcodon
-grep -w mRNA /media/perimeter/r2/eeu/trans/eeu.mini.gff | grep -w StopCodon=1 | grep -o "MP[0-9]*" > miniprot.compelte.id
+#The recent version used StopCodon=X to represent how many stopcodon and "grep -v Frameshift" do not allow frameshift
+grep -w mRNA /media/perimeter/r2/eeu/trans/eeu.mini.gff | grep -v Frameshift | grep -w StopCodon=1 | grep -o "MP[0-9]*" > miniprot.compelte.id
 #https://github.com/jorvis/biocode/blob/9f043705e436db4a17dace4a2f70be0da5dfc3b5/gff/filter_gff3_by_id_list.py
 python /media/perimeter/r2/eeu/trans/filter_gff3_by_id_list.py -l /media/perimeter/r2/eeu/trans/miniprot.compelte.id -i /media/perimeter/r2/eeu/trans/eeu.mini.gff -o eeu.mini.complete.gff
 
