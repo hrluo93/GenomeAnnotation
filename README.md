@@ -20,8 +20,7 @@ Homology: Complete structure from Miniprot
 
 ########### Post PASA ############
 
-This [
-](https://github.com/hrluo93/python4bio/blob/main/false-gene-model.py) script can check if annotation contained false gene model.
+This (https://github.com/hrluo93/python4bio/blob/main/false-gene-model.py) script can check if the annotation contains false gene models.
 
 ###Soft-masked genome would result in TE contained in annotation. We used OrthoFinder to filter annotation results to retain orthologous genes and remove non-orthologous with 1 or 2 exons.
 
